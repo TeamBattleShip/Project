@@ -204,6 +204,7 @@ java.lang.Exception
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1426)
 <<<<<<< HEAD
+<<<<<<< HEAD
 !SESSION 2014-05-05 13:33:03.780 -----------------------------------------------
 eclipse.buildId=4.3.0.M20130911-1000
 java.version=1.7.0_55
@@ -238,6 +239,8 @@ Caused by: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Premat
 
 !ENTRY org.eclipse.egit.ui 2 0 2014-05-05 13:33:16.885
 =======
+=======
+>>>>>>> 6001291... test
 
 !ENTRY org.eclipse.equinox.p2.core 4 0 2014-05-04 16:31:57.865
 !MESSAGE Provisioning exception
@@ -263,7 +266,10 @@ Framework arguments:  -product org.eclipse.epp.package.jee.product
 Command-line arguments:  -data C:\Users\Kalle\Documents\GitHub\Project -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
 
 !ENTRY org.eclipse.egit.ui 2 0 2014-05-04 16:33:54.222
+<<<<<<< HEAD
 >>>>>>> master
+=======
+>>>>>>> 6001291... test
 !MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
 Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
 The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
@@ -272,6 +278,7 @@ Team > Git > Configuration preference page's 'System Settings' tab.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 !ENTRY org.eclipse.egit.ui 2 0 2014-05-05 13:33:16.901
 !MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
 user global configuration and to define the default location to store repositories: 'H:\'. If this is
@@ -279,6 +286,8 @@ not correct please set the HOME environment variable and restart Eclipse. Otherw
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
 =======
+=======
+>>>>>>> 6001291... test
 !ENTRY org.eclipse.egit.ui 2 0 2014-05-04 16:33:54.223
 !MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
 user global configuration and to define the default location to store repositories: 'C:\Users\Kalle'. If this is
@@ -352,4 +361,7 @@ java.lang.Exception
 !MESSAGE Save operation warnings.
 !SUBENTRY 1 org.eclipse.core.resources 2 234 2014-05-04 16:52:58.076
 !MESSAGE The project description file (.project) for 'tictactoe' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+<<<<<<< HEAD
 >>>>>>> master
+=======
+>>>>>>> 6001291... test

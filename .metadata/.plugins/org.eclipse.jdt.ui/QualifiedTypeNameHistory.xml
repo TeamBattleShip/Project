@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="game.io.InputListenerBattleship"/>
+<fullyQualifiedTypeName name="graphicaluserinterface.GamePanel2"/>
+<fullyQualifiedTypeName name="graphicaluserinterface.GamePanel"/>
+<fullyQualifiedTypeName name="game.impl.Move"/>
 </qualifiedTypeNameHistroy>

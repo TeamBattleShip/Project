@@ -107,10 +107,14 @@ public class GameStateBattleship implements GameState, Serializable {
 	@Override
 	public DieRollFactory getDieRollFactory() {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		// TODO Auto-generated method stub
 =======
 	
 >>>>>>> master
+=======
+	
+>>>>>>> 6001291... test
 		return null;
 	}
 }

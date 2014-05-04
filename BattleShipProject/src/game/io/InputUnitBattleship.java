@@ -11,7 +11,11 @@ public class InputUnitBattleship extends InputUnit {
 =======
 
 
+<<<<<<< HEAD
 >>>>>>> master
+=======
+
+>>>>>>> 6001291... test
 
 	private Move getNextMove(GameState state) {
 		Move result = new Move(state.getPlayerInTurn(),
