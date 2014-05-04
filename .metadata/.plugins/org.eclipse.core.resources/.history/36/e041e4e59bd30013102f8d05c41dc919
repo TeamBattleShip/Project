@@ -1,0 +1,99 @@
+package tictactoe.impl;
+
+import game.api.GameState;
+import game.impl.Board;
+import game.impl.BoardLocation;
+import game.impl.GamePiece;
+import game.impl.Move;
+import game.impl.User;
+import java.io.Serializable;
+import java.util.Arrays;
+import java.util.List;
+
+/**
+ *
+ * @author thomas
+ */
+public class TttGameState implements GameState, Serializable {
+
+    private final List<User> users;
+    private final Board board;
+    private final RuleChecker ruleChecker;
+    private Integer turnCounter = 0;
+    private String message = "";
+
+    public TttGameState() {
+        this(Arrays.asList(
+                new User("A", Arrays.asList(new GamePiece("X"), new GamePiece("X"), new GamePiece("X"))),
+                new User("B", Arrays.asList(new GamePiece("O"), new GamePiece("O"), new GamePiece("O")))),
+                new Board(Arrays.asList(
+                                new BoardLocation("11"), new BoardLocation("12"), new BoardLocation("13"),
+                                new BoardLocation("21"), new BoardLocation("22"), new BoardLocation("23"),
+                                new BoardLocation("31"), new BoardLocation("32"), new BoardLocation("33"))));
+    }
+
+    public TttGameState(List<User> users, Board board) {
+        this.users = users;
+        this.board = board;
+        this.ruleChecker = new RuleChecker();
+    }
+
+    @Override
+    public List<User> getUsers() {
+        return users;
+    }
+
+    @Override
+    public User getUserInTurn() {
+        return users.get(turnCounter % 2);
+    }
+
+    @Override
+    public Board getBoard() {
+        return board;
+    }
+
+    @Override
+    public Boolean hasEnded() {
+        return ruleChecker.isGameFinished(this);
+    }
+
+    @Override
+    public User getWinner() {
+        if (hasEnded()) {
+            return getLastUser();
+        }
+        return null;
+    }
+
+    @Override
+    public Boolean proposeMove(Move move) {
+        if (ruleChecker.isValidMove(move)) {
+            move.execute();
+            turnCounter++;
+            message = "";
+            return Boolean.TRUE;
+        }
+        message = "Ogiltigt drag";
+        return Boolean.FALSE;
+    }
+
+    @Override
+    public String getMessage() {
+        return message;
+    }
+
+    @Override
+    public void reset() {
+        board.getLocations().stream().forEach((location) -> {
+            location.setPiece(null);
+        });
+        turnCounter = 0;
+    }
+
+    @Override
+    public User getLastUser() {
+        return users.get(1 - turnCounter % 2);
+    }
+
+}

@@ -1,0 +1,57 @@
+
+
+import game.api.GameState;
+import game.impl.BoardLocation;
+import game.impl.Move;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ *
+ * @author thomas
+ */
+public class RuleChecker {
+
+    public Boolean isValidMove(Move move) {
+        if (move.getPiece() == null) {
+            return Boolean.FALSE;
+        }
+        if (move.getDestination() == null || move.getDestination().getPiece() != null) {
+            return Boolean.FALSE;
+        }
+        return Boolean.TRUE;
+    }
+
+    public Boolean isGameFinished(GameState state) {
+        List<BoardLocation> xs = findLocationsOccupiedByLastUser(state);
+        if (xs.size() == 3) {
+            BoardLocation x1 = xs.get(0), x2 = xs.get(1), x3 = xs.get(2);
+            if (x1.getId().charAt(0) == x2.getId().charAt(0) && x2.getId().charAt(0) == x3.getId().charAt(0)) {
+                return Boolean.TRUE;
+            }
+            if (x1.getId().charAt(1) == x2.getId().charAt(1) && x2.getId().charAt(1) == x3.getId().charAt(1)) {
+                return Boolean.TRUE;
+            }
+            if (x2.getId().charAt(0) == x2.getId().charAt(1)) {
+                if (x1.getId().charAt(0) == x1.getId().charAt(1) && x3.getId().charAt(0) == x3.getId().charAt(1)) {
+                    return Boolean.TRUE;
+                }
+                if (x1.getId().charAt(0) == x3.getId().charAt(1) && x3.getId().charAt(0) == x1.getId().charAt(1)) {
+                    return Boolean.TRUE;
+                }
+            }
+        }
+        return Boolean.FALSE;
+    }
+
+    private List<BoardLocation> findLocationsOccupiedByLastUser(GameState state) {
+        String playerPieceToken = state.getLastUser().getPieces().get(0).getId().substring(0, 1);
+        List<BoardLocation> result = new ArrayList<>();
+        state.getBoard().getLocations().stream()
+                .filter((location) -> (location.getPiece() != null && location.getPiece().getId().equals(playerPieceToken)))
+                .forEach((location) -> {
+                    result.add(location);
+                });
+        return result;
+    }
+}

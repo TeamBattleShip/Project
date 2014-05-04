@@ -3,7 +3,6 @@ package graphicaluserinterface;
 import game.api.GameStateBattleship;
 import game.init.Runner;
 import game.io.IoFactoryBattleship;
-import game.io.OutputUnitBattleship;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
