@@ -2,6 +2,7 @@ package game.api;
 
 import game.impl.Board;
 import game.impl.BoardLocation;
+import game.impl.DieRollFactory;
 import game.impl.GamePiece;
 import game.impl.Move;
 import game.impl.Player;
@@ -100,5 +101,11 @@ public class GameStateBattleship implements GameState, Serializable {
 	@Override
 	public void reset() {
 
+	}
+
+	@Override
+	public DieRollFactory getDieRollFactory() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
