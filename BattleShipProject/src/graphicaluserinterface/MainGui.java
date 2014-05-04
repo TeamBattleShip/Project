@@ -23,7 +23,6 @@ public class MainGui extends JFrame {
 	private JButton exit = new JButton();
 	private JButton titlePic = new JButton();
 	private JLabel backgroundPic = new JLabel();
-	
 
 	public MainGui() {
 		setUpFrame();
@@ -65,7 +64,7 @@ public class MainGui extends JFrame {
 		exit.setIcon(new ImageIcon("Pictures\\Exit.jpg"));
 		exit.setBounds(730, 500, 111, 69);
 		frame.add(exit);
-		
+
 		titlePic.setBorderPainted(false);
 		titlePic.setIcon(new ImageIcon("Pictures\\BattleshipTitle.jpg"));
 		titlePic.setBounds(304, 17, 341, 45);
@@ -77,9 +76,12 @@ public class MainGui extends JFrame {
 		newGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				new Runner(new GameStateBattleship(), new IoFactoryBattleship()).run();
 
-			}});
+				new Runner(new GameStateBattleship(), new IoFactoryBattleship())
+						.run();
+
+			}
+		});
 
 		options.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

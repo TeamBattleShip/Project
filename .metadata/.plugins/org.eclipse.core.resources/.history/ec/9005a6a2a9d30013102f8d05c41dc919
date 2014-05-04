@@ -1,0 +1,14 @@
+package game.io;
+
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import game.impl.Move;
+
+public class InputListenerBattleship implements InputListener {
+
+	@Override
+	public void inputOccured(Move arg0) {
+
+	}
+}

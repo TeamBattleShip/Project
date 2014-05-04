@@ -4,7 +4,6 @@ import game.api.GameState;
 import game.impl.BoardLocation;
 import game.impl.GamePiece;
 import game.impl.Move;
-import graphicaluserinterface.GameGUI;
 import graphicaluserinterface.gamelabels.GameLabelBlank;
 
 import java.awt.Color;
@@ -17,6 +16,7 @@ public class PlayerLabelClicked implements MouseListener {
 	private GameLabelBlank label;
 	private static Stack<Integer> boatsTobeplaced;
 
+
 	public PlayerLabelClicked(GameLabelBlank label) {
 		if (boatsTobeplaced == null) {
 			boatsTobeplaced = new Stack<Integer>();
@@ -26,6 +26,7 @@ public class PlayerLabelClicked implements MouseListener {
 			boatsTobeplaced.add(4);
 			boatsTobeplaced.add(5);
 		}
+		
 		this.label = label;
 	}
 
@@ -61,7 +62,7 @@ public class PlayerLabelClicked implements MouseListener {
 		label.changeColor(colorNew);
 		label.getParent().repaint();
 
-		GameState state = GameGUI.getGameState();
+		
 		int i = PlayerLabelClicked.boatsTobeplaced.pop();
 		String coordinate;
 
@@ -69,15 +70,15 @@ public class PlayerLabelClicked implements MouseListener {
 			int temp = Integer.parseInt("" + label.getCoordinate().charAt(1))
 					+ x;
 			coordinate = "" + label.getCoordinate().charAt(0) + temp;
-			for (BoardLocation bl : state.getBoard().getLocations()) {
-				if (bl.getId().equalsIgnoreCase(coordinate))
-					state.proposeMove(new Move(state.getPlayers().get(0),
-							new GamePiece("i"), bl));
+//			for (BoardLocation bl : state.getBoard().getLocations()) {
+//				if (bl.getId().equalsIgnoreCase(coordinate))
+//					state.proposeMove(new Move(state.getPlayers().get(0),
+//							new GamePiece("i"), bl));
 			}
 
 		}
-		GameGUI.updateBoard();
-	}
+		
+	
 
 	@Override
 	public void mouseReleased(MouseEvent obj) {

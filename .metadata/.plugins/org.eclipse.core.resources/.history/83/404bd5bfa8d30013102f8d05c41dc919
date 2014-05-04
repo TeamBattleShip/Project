@@ -1,0 +1,30 @@
+package game.io;
+
+import game.api.GameState;
+import game.impl.Move;
+
+public class InputUnitBattleship extends InputUnit {
+	public InputUnitBattleship() {
+		
+		
+	}
+
+	private Move getNextMove(GameState state) {
+		Move result = null;
+
+	
+
+		return result;
+
+	}
+
+	@Override
+	public void setup(GameState state) {
+		while (!state.hasEnded()) {
+			System.out.println("test");
+			notifyListenersOfMove(getNextMove(state));
+		}
+		System.exit(0);
+	}
+
+}

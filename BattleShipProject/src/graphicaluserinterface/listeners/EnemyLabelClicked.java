@@ -1,5 +1,6 @@
 package graphicaluserinterface.listeners;
 
+import game.io.IoFactoryBattleship;
 import graphicaluserinterface.gamelabels.GameLabelBlank;
 
 import java.awt.Color;
@@ -10,6 +11,10 @@ public class EnemyLabelClicked implements MouseListener {
 	private GameLabelBlank label;
 	public EnemyLabelClicked(GameLabelBlank label) {
 		this.label = label;
+	}
+
+	public EnemyLabelClicked(GameLabelBlank enemy, IoFactoryBattleship factory) {
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override

@@ -6,8 +6,6 @@ public class InputListenerBattleship implements InputListener {
 
 	@Override
 	public void inputOccured(Move arg0) {
-		
 
 	}
-
 }

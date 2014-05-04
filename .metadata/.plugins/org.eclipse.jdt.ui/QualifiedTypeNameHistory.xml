@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="game.io.IoFactory"/>
+<fullyQualifiedTypeName name="game.io.IoFactoryBattleship"/>
 <fullyQualifiedTypeName name="game.io.InputListenerBattleship"/>
+<fullyQualifiedTypeName name="game.api.GameStateBattleship"/>
+<fullyQualifiedTypeName name="game.impl.Player"/>
+<fullyQualifiedTypeName name="game.impl.Move"/>
+<fullyQualifiedTypeName name="game.impl.BoardLocation"/>
 </qualifiedTypeNameHistroy>
