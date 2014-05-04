@@ -5,13 +5,9 @@ import game.impl.BoardLocation;
 import game.impl.GamePiece;
 import game.impl.Move;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-
 public class InputUnitBattleship extends InputUnit {
 
-	private final BufferedReader inputSourceReader = new BufferedReader(
-			new InputStreamReader(System.in));
+
 
 	private Move getNextMove(GameState state) {
 		Move result = null;
