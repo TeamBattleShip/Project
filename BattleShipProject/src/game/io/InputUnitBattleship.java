@@ -9,10 +9,12 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class InputUnitBattleship extends InputUnit {
+	
 
 	private final BufferedReader inputSourceReader = new BufferedReader(
 			new InputStreamReader(System.in));
 
+	
 	private Move getNextMove(GameState state) {
 		Move result = null;
 		
@@ -47,8 +49,6 @@ public class InputUnitBattleship extends InputUnit {
 		}
 		return null;
 	}
-
-	
 
 	@Override
 	public void setup(GameState state) {
