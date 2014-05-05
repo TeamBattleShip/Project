@@ -2,6 +2,7 @@ package game.api;
 
 import game.impl.Board;
 import game.impl.BoardLocation;
+import game.impl.DieRollFactory;
 import game.impl.GamePiece;
 import game.impl.Move;
 import game.impl.Player;
@@ -35,13 +36,14 @@ public class GameStateBattleship implements GameState, Serializable {
 
 		players = new ArrayList<Player>();
 		ArrayList<GamePiece> pieces = new ArrayList<GamePiece>();
-		pieces.add(new GamePiece("" +2));
-		pieces.add(new GamePiece("" +3));
-		pieces.add(new GamePiece("" +3));
-		pieces.add(new GamePiece("" +4));
-		pieces.add(new GamePiece("" +5));
-		
+		pieces.add(new GamePiece("" + 2));
+		pieces.add(new GamePiece("" + 3));
+		pieces.add(new GamePiece("" + 3));
+		pieces.add(new GamePiece("" + 4));
+		pieces.add(new GamePiece("" + 5));
+
 		players.add(new Player("Player1", pieces));
+		players.add(new Player("Player2", pieces));
 		ruleChecker = new RuleChecker();
 	}
 
@@ -100,5 +102,11 @@ public class GameStateBattleship implements GameState, Serializable {
 	@Override
 	public void reset() {
 
+	}
+
+	@Override
+	public DieRollFactory getDieRollFactory() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

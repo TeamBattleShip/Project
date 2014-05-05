@@ -5,17 +5,13 @@ import game.impl.BoardLocation;
 import game.impl.GamePiece;
 import game.impl.Move;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-
 public class InputUnitBattleship extends InputUnit {
-
-	private final BufferedReader inputSourceReader = new BufferedReader(
-			new InputStreamReader(System.in));
+	private GameState state;
 
 	private Move getNextMove(GameState state) {
-		Move result = null;
-		
+		Move result = new Move(state.getPlayerInTurn(),
+				getFirstUnusedPiece(state), resolveBoardLocation(state, "A1"));
+
 		return result;
 	}
 
@@ -48,14 +44,9 @@ public class InputUnitBattleship extends InputUnit {
 		return null;
 	}
 
-	
-
 	@Override
 	public void setup(GameState state) {
-		while (!state.hasEnded()) {
-			notifyListenersOfMove(getNextMove(state));
-		}
-		System.exit(0);
+		this.state = state;
 	}
 
 }

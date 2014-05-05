@@ -13,5 +13,4 @@ public class IoFactoryBattleship implements IoFactory {
 	public OutputUnit getOutputUnit() {	
 		return outputUnit;
 	}
-
 }
