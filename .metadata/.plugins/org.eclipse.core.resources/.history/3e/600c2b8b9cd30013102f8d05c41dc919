@@ -1,0 +1,113 @@
+import game.api.GameState;
+import game.impl.Board;
+import game.impl.BoardLocation;
+import game.impl.DieRollFactory;
+import game.impl.GamePiece;
+import game.impl.Move;
+import game.impl.Player;
+
+import java.io.Serializable;
+import java.util.Arrays;
+import java.util.List;
+
+/**
+ *
+ * @author thomas
+ */
+public class TttGameState implements GameState, Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7724923468170338846L;
+	private final List<Player> users;
+	private final Board board;
+	private final RuleChecker ruleChecker;
+	private Integer turnCounter = 0;
+	private String message = "";
+
+	public TttGameState() {
+		this(Arrays.asList(
+				new Player("A", Arrays.asList(new GamePiece("X"),
+						new GamePiece("X"), new GamePiece("X"))),
+				new Player("B", Arrays.asList(new GamePiece("O"),
+						new GamePiece("O"), new GamePiece("O")))), new Board(
+				Arrays.asList(new BoardLocation("11"), new BoardLocation("12"),
+						new BoardLocation("13"), new BoardLocation("21"),
+						new BoardLocation("22"), new BoardLocation("23"),
+						new BoardLocation("31"), new BoardLocation("32"),
+						new BoardLocation("33"))));
+	}
+
+	public TttGameState(List<Player> users, Board board) {
+		this.users = users;
+		this.board = board;
+		this.ruleChecker = new RuleChecker();
+	}
+
+	@Override
+	public Board getBoard() {
+		return board;
+	}
+
+	@Override
+	public Boolean hasEnded() {
+		return ruleChecker.isGameFinished(this);
+	}
+
+
+	@Override
+	public Boolean proposeMove(Move move) {
+		if (ruleChecker.isValidMove(move)) {
+			move.execute();
+			turnCounter++;
+			message = "";
+			return Boolean.TRUE;
+		}
+		message = "Ogiltigt drag";
+		return Boolean.FALSE;
+	}
+
+	@Override
+	public String getMessage() {
+		return message;
+	}
+
+
+	@Override
+	public DieRollFactory getDieRollFactory() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Player getLastPlayer() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Player getPlayerInTurn() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Player> getPlayers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Player getWinner() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void reset() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

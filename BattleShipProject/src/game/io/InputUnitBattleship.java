@@ -6,7 +6,12 @@ import game.impl.GamePiece;
 import game.impl.Move;
 
 public class InputUnitBattleship extends InputUnit {
+<<<<<<< HEAD
 	private GameState state;
+=======
+
+
+>>>>>>> master
 
 	private Move getNextMove(GameState state) {
 		Move result = new Move(state.getPlayerInTurn(),

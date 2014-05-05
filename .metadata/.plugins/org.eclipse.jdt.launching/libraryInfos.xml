@@ -19,6 +19,7 @@
 <entry path="C:\Program Files\Java\jre7\lib\endorsed"/>
 </endorsedDirs>
 </libraryInfo>
+<<<<<<< HEAD
 <libraryInfo home="C:\Program Files (x86)\Java\jre7" version="1.7.0_55">
 <bootpath>
 <entry path="C:\Program Files (x86)\Java\jre7\lib\resources.jar"/>
@@ -38,4 +39,6 @@
 <entry path="C:\Program Files (x86)\Java\jre7\lib\endorsed"/>
 </endorsedDirs>
 </libraryInfo>
+=======
+>>>>>>> master
 </libraryInfos>

@@ -184,12 +184,14 @@ public class GameGUI extends JFrame {
 		for (BoardLocation bl : state.getBoard().getLocations()) {
 			temp = bl.getId();
 			if (bl.getPiece() != null || playerBoard.containsKey(temp)) {
-				glb = playerBoard.get(temp);
-				glb.changeColor(Color.black);
-				glb.setOpaque(true);
-				glb.repaint();
 				try {
+
 					System.out.println(bl.getPiece().getId());
+					glb = playerBoard.get(temp);
+					glb.changeColor(Color.black);
+					glb.setOpaque(true);
+					glb.repaint();
+					glb.click();
 				} catch (Exception e) {
 					System.out.println("fel");
 				}
